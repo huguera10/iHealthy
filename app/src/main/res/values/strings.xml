@@ -9,4 +9,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_restaurant_view">RestaurantViewActivity</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">TQhl7DbLKccsTnRgMR6rtlCSWgo7KTdfGfGDlx32</string>
+    <string name="back4app_client_key">9MqGXReEnh4yKV7V9XYo92GOXTxvnZmsXL8XjpPc</string>
+
 </resources>
