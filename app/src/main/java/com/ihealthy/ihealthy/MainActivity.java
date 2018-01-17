@@ -1,5 +1,6 @@
 package com.ihealthy.ihealthy;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -33,14 +34,12 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this, RegisterNewCaloriesActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -110,6 +109,16 @@ public class MainActivity extends AppCompatActivity
                             R.id.relative_layout_for_fragment,
                             restaurantFragment,
                             restaurantFragment.getTag()
+                    ).commit();
+
+        } else if (id == R.id.nav_my_diet) {
+            MyDietFragment myDietFragment = new MyDietFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().
+                    replace(
+                            R.id.relative_layout_for_fragment,
+                            myDietFragment,
+                            myDietFragment.getTag()
                     ).commit();
 
         } else if (id == R.id.nav_history) {

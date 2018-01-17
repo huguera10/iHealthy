@@ -6,16 +6,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_restaurants"
-            android:icon="@drawable/ic_local_grocery_store_black_24dp"
+            android:icon="@drawable/ic_restaurant_black_24dp"
             android:title="Restaurants" />
+        <item
+            android:id="@+id/nav_my_diet"
+            android:icon="@drawable/ic_insert_emoticon_black_24dp"
+            android:title="My Diet" />
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_menu_gallery"
             android:title="History" />
-        <!--<item-->
-            <!--android:id="@+id/nav_slideshow"-->
-            <!--android:icon="@drawable/ic_menu_slideshow"-->
-            <!--android:title="Slideshow" />-->
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
