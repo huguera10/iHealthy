@@ -16,4 +16,14 @@
     <string name="back4app_app_id">TQhl7DbLKccsTnRgMR6rtlCSWgo7KTdfGfGDlx32</string>
     <string name="back4app_client_key">9MqGXReEnh4yKV7V9XYo92GOXTxvnZmsXL8XjpPc</string>
 
+    <string-array name="weekdays">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
 </resources>
