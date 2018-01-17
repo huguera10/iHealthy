@@ -4,9 +4,359 @@
     android:layout_height="match_parent"
     tools:context="com.ihealthy.ihealthy.HistoryFragment">
 
-
-    <DatePicker
-        android:id="@+id/datePicker2"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:maxLength="99"
+                android:singleLine="true"
+                android:text="My Week History"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tv_sunday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_2"
+                android:layout_alignLeft="@+id/et_tuesday"
+                android:layout_alignStart="@+id/et_tuesday"
+                android:layout_toLeftOf="@+id/textView16"
+                android:layout_toStartOf="@+id/textView16"
+                android:hint="1500"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_expected_sunday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView16"
+                android:layout_alignBottom="@+id/textView16"
+                android:layout_toEndOf="@+id/textView16"
+                android:layout_toRightOf="@+id/textView16"
+                android:hint="1500"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginTop="14dp"
+                android:text="Sunday:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/tv_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_2"
+                android:text="Monday:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/tv_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_3"
+                android:text="Tuesday:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/et_tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/et_monday"
+                android:layout_alignLeft="@+id/et_monday"
+                android:layout_alignRight="@+id/et_monday"
+                android:layout_alignStart="@+id/et_monday"
+                android:layout_below="@+id/et_monday"
+                android:ems="10"
+                android:hint="1555"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/et_expected_tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/et_wednesday"
+                android:layout_alignEnd="@+id/et_expected_monday"
+                android:layout_alignRight="@+id/et_expected_monday"
+                android:layout_toEndOf="@+id/textView10"
+                android:layout_toRightOf="@+id/textView10"
+                android:ems="10"
+                android:hint="1555"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/et_wednesday"
+                android:text="Wednesday:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/et_monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_3"
+                android:layout_alignBottom="@+id/tv_3"
+                android:layout_alignLeft="@+id/et_wednesday"
+                android:layout_alignStart="@+id/et_wednesday"
+                android:hint="2000"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/et_expected_monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textView15"
+                android:layout_toEndOf="@+id/textView10"
+                android:layout_toRightOf="@+id/textView10"
+                android:hint="2000"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/et_wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView15"
+                android:layout_toEndOf="@+id/tv_5"
+                android:layout_toRightOf="@+id/tv_5"
+                android:hint="1500"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/et_expected_wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView14"
+                android:layout_alignBottom="@+id/textView14"
+                android:layout_toEndOf="@+id/textView14"
+                android:layout_toRightOf="@+id/textView14"
+                android:hint="1500"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_5"
+                android:text="Thursday:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/et_thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_6"
+                android:layout_alignBottom="@+id/tv_6"
+                android:layout_toEndOf="@+id/tv_5"
+                android:layout_toRightOf="@+id/tv_5"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/et_expected_thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView13"
+                android:layout_alignBottom="@+id/textView13"
+                android:layout_toEndOf="@+id/textView13"
+                android:layout_toRightOf="@+id/textView13"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_6"
+                android:text="Friday:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/et_friday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_7"
+                android:layout_alignBottom="@+id/tv_7"
+                android:layout_alignEnd="@+id/et_thursday"
+                android:layout_alignLeft="@+id/et_thursday"
+                android:layout_alignRight="@+id/et_thursday"
+                android:layout_alignStart="@+id/et_thursday"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/et_expected_friday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView12"
+                android:layout_alignBottom="@+id/textView12"
+                android:layout_toEndOf="@+id/textView12"
+                android:layout_toRightOf="@+id/textView12"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_7"
+                android:text="Saturday:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/et_saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_8"
+                android:layout_alignBottom="@+id/tv_8"
+                android:layout_alignEnd="@+id/et_friday"
+                android:layout_alignLeft="@+id/et_friday"
+                android:layout_alignRight="@+id/et_friday"
+                android:layout_alignStart="@+id/et_friday"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/et_expected_saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/textView11"
+                android:layout_toRightOf="@+id/textView11"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/et_monday"
+                android:layout_alignBottom="@+id/et_monday"
+                android:layout_toEndOf="@+id/et_tuesday"
+                android:layout_toRightOf="@+id/et_tuesday"
+                android:text=" Calories of "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/et_saturday"
+                android:layout_alignBottom="@+id/et_saturday"
+                android:layout_toEndOf="@+id/et_saturday"
+                android:layout_toRightOf="@+id/et_saturday"
+                android:text=" Calories of "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_7"
+                android:layout_toEndOf="@+id/et_friday"
+                android:layout_toRightOf="@+id/et_friday"
+                android:text=" Calories of "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/et_thursday"
+                android:layout_alignBottom="@+id/et_thursday"
+                android:layout_toEndOf="@+id/et_thursday"
+                android:layout_toRightOf="@+id/et_thursday"
+                android:text=" Calories of "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_5"
+                android:layout_alignBottom="@+id/tv_5"
+                android:layout_toEndOf="@+id/et_wednesday"
+                android:layout_toRightOf="@+id/et_wednesday"
+                android:text=" Calories of "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_4"
+                android:layout_toEndOf="@+id/et_monday"
+                android:layout_toRightOf="@+id/et_monday"
+                android:text=" Calories of "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_sunday"
+                android:layout_alignBottom="@+id/tv_sunday"
+                android:layout_toEndOf="@+id/et_tuesday"
+                android:layout_toRightOf="@+id/et_tuesday"
+                android:text=" Calories of "
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
 </RelativeLayout>
