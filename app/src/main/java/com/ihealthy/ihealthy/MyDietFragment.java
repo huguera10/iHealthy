@@ -53,6 +53,34 @@ public class MyDietFragment extends Fragment {
 
     private void registerDiet(View view, EditText et_sunday,EditText et_monday,EditText et_tuesday,
                               EditText et_wednesday,EditText et_thursday,EditText et_friday,EditText et_saturday){
+
+    	ParseObject objClass = new ParseObject("mydiet");
+
+        objClass.put("userID", ParseObject.createWithoutData(ParseUser.class, "user01") );
+
+        String value= et_sunday.getText().toString();
+        int dayValue=Integer.parseInt(value);
+        objClass.put("sunday", dayValue);
+        value= et_monday.getText().toString();
+        dayValue=Integer.parseInt(value);
+        objClass.put("monday", dayValue);
+        value= et_tuesday.getText().toString();
+        dayValue=Integer.parseInt(value);
+        objClass.put("tuesday", dayValue);
+        value= et_wednesday.getText().toString();
+        dayValue=Integer.parseInt(value);
+        objClass.put("wednesday", dayValue);
+        value= et_thursday.getText().toString();
+        dayValue=Integer.parseInt(value);
+        objClass.put("thursday", dayValue);
+        value= et_friday.getText().toString();
+        dayValue=Integer.parseInt(value);
+        objClass.put("friday", dayValue);
+        value= et_saturday.getText().toString();
+        dayValue=Integer.parseInt(value);
+        objClass.put("saturday", dayValue);
+        objClass.saveInBackground();
+    	
         Snackbar.make(view, "Implementar registro de dieta", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
