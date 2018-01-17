@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Parse.initialize(this);
-        ParseInstallation.getCurrentInstallation().saveInBackground();
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -135,6 +132,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
+        } else if (id == R.id.nav_logout){
+            ParseUser.logOutInBackground();
+            startActivity(new Intent(this, DispatchActivity.class));
         }
 
 
