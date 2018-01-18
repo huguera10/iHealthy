@@ -4,11 +4,15 @@ package com.ihealthy.ihealthy;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 
 /**
@@ -54,9 +58,12 @@ public class MyDietFragment extends Fragment {
     private void registerDiet(View view, EditText et_sunday,EditText et_monday,EditText et_tuesday,
                               EditText et_wednesday,EditText et_thursday,EditText et_friday,EditText et_saturday){
 
+        ParseUser parseUser = ParseUser.getCurrentUser();
+        String userId = parseUser.getObjectId();
+
     	ParseObject objClass = new ParseObject("mydiet");
 
-        objClass.put("userID", ParseObject.createWithoutData(ParseUser.class, "user01") );
+        objClass.put("userID", ParseObject.createWithoutData(ParseUser.class, userId) );
 
         String value= et_sunday.getText().toString();
         int dayValue=Integer.parseInt(value);
@@ -79,9 +86,9 @@ public class MyDietFragment extends Fragment {
         value= et_saturday.getText().toString();
         dayValue=Integer.parseInt(value);
         objClass.put("saturday", dayValue);
-        objClass.saveInBackground();
+        objClass.saveInBackground(); //TODO FICAR ESPERTO COM O BACKGROUND
     	
-        Snackbar.make(view, "Implementar registro de dieta", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Diet saved!", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
 
