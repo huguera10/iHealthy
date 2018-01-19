@@ -11,8 +11,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.parse.GetCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 
 /**
@@ -55,41 +60,100 @@ public class MyDietFragment extends Fragment {
         });
     }
 
-    private void registerDiet(View view, EditText et_sunday,EditText et_monday,EditText et_tuesday,
-                              EditText et_wednesday,EditText et_thursday,EditText et_friday,EditText et_saturday){
+    private void registerDiet(View view, final EditText et_sunday, final EditText et_monday, final EditText et_tuesday,
+                              final EditText et_wednesday, final EditText et_thursday, final EditText et_friday, final EditText et_saturday){
 
         ParseUser parseUser = ParseUser.getCurrentUser();
         String userId = parseUser.getObjectId();
 
-    	ParseObject objClass = new ParseObject("mydiet");
+        // dar um select e ver se esse user já tem dados salvos.
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("mydiet");
+        query.whereEqualTo("userID",  ParseObject.createWithoutData("_User",userId));
 
-        objClass.put("userID", ParseObject.createWithoutData(ParseUser.class, userId) );
+        try {
+            //busca na web a lista de resultados da querry
+            List<ParseObject> objects = query.find();
 
-        String value= et_sunday.getText().toString();
-        int dayValue=Integer.parseInt(value);
-        objClass.put("sunday", dayValue);
-        value= et_monday.getText().toString();
-        dayValue=Integer.parseInt(value);
-        objClass.put("monday", dayValue);
-        value= et_tuesday.getText().toString();
-        dayValue=Integer.parseInt(value);
-        objClass.put("tuesday", dayValue);
-        value= et_wednesday.getText().toString();
-        dayValue=Integer.parseInt(value);
-        objClass.put("wednesday", dayValue);
-        value= et_thursday.getText().toString();
-        dayValue=Integer.parseInt(value);
-        objClass.put("thursday", dayValue);
-        value= et_friday.getText().toString();
-        dayValue=Integer.parseInt(value);
-        objClass.put("friday", dayValue);
-        value= et_saturday.getText().toString();
-        dayValue=Integer.parseInt(value);
-        objClass.put("saturday", dayValue);
-        objClass.saveInBackground(); //TODO FICAR ESPERTO COM O BACKGROUND
-    	
+            if (objects.size() > 0) { //se já tem dados, precisamos do update
+
+                String objId = objects.get(0).getObjectId();
+                ParseQuery<ParseObject> query1 = ParseQuery.getQuery("mydiet");
+                query1.getInBackground(objId, new GetCallback<ParseObject>() {
+                    public void done(ParseObject objClass, ParseException e) {
+                        System.out.println(e);
+                        if (e == null) {
+
+                            // Now let's update it with some new data. In this case, only cheatMode and score
+                            // will get sent to the Parse Cloud. playerName hasn't changed.
+
+                            saveInfo(objClass, et_sunday,et_monday,et_tuesday,et_wednesday,et_thursday,et_friday,et_saturday);
+
+                        }
+                    }
+                });
+
+
+            } else { //senao adiciona os dados novos
+                ParseObject objClass = new ParseObject("mydiet");
+                objClass.put("userID", ParseObject.createWithoutData(ParseUser.class, userId) );
+
+                saveInfo(objClass, et_sunday,et_monday,et_tuesday,et_wednesday,et_thursday,et_friday,et_saturday);
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         Snackbar.make(view, "Diet saved!", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
 
+    private void saveInfo(ParseObject objClass, final EditText et_sunday, final EditText et_monday, final EditText et_tuesday,
+                          final EditText et_wednesday, final EditText et_thursday, final EditText et_friday, final EditText et_saturday){
+        int dayValue;
+
+        String value= et_sunday.getText().toString();
+        if(!value.equals("")) {
+            dayValue  = Integer.parseInt(value);
+            objClass.put("sunday", dayValue);
+        }
+
+        value= et_monday.getText().toString();
+        if(!value.equals("")) {
+            dayValue = Integer.parseInt(value);
+            objClass.put("monday", dayValue);
+        }
+
+        value= et_tuesday.getText().toString();
+        if(!value.equals("")) {
+            dayValue=Integer.parseInt(value);
+            objClass.put("tuesday", dayValue);
+        }
+
+        value= et_wednesday.getText().toString();
+        if(!value.equals("")) {
+            dayValue = Integer.parseInt(value);
+            objClass.put("wednesday", dayValue);
+        }
+
+        value= et_thursday.getText().toString();
+        if(!value.equals("")) {
+            dayValue=Integer.parseInt(value);
+            objClass.put("thursday", dayValue);
+        }
+
+        value= et_friday.getText().toString();
+        if(!value.equals("")) {
+            dayValue = Integer.parseInt(value);
+            objClass.put("friday", dayValue);
+        }
+
+        value= et_saturday.getText().toString();
+        if(!value.equals("")) {
+            dayValue=Integer.parseInt(value);
+            objClass.put("saturday", dayValue);
+        }
+
+        objClass.saveInBackground(); //TODO FICAR ESPERTO COM O BACKGROUND
+    }
 }

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -65,24 +66,84 @@ public class RegisterNewCaloriesActivity extends AppCompatActivity {
         });
     }
 
-    private void registerCalories(View view, String weekday, EditText et_calories){
+    private void registerCalories(View view, final String weekday, final EditText et_calories){
         ParseUser parseUser = ParseUser.getCurrentUser();
         String userId = parseUser.getObjectId();
 
-        ParseObject objClass = new ParseObject("myconsumeddiet");
+        // dar um select e ver se esse user já tem dados salvos.
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("myconsumeddiet");
+        query.whereEqualTo("userID",  ParseObject.createWithoutData("_User",userId));
 
-        objClass.put("userID", ParseObject.createWithoutData(ParseUser.class, userId) );
-        System.out.println("\n\n\n\n\nweekday "+weekday+" - ");
-        System.out.println(Integer.parseInt(et_calories.getText().toString()));
-        String et_calories_str = et_calories.getText().toString();
-        objClass.put(weekday.toLowerCase(), Integer.parseInt(et_calories_str));
+        try {
+            //busca na web a lista de resultados da querry
+            final List<ParseObject> objects = query.find();
 
-        objClass.saveInBackground(); //TODO FICAR ESPERTO COM O BACKGROUND
+            if (objects.size() > 0) { //se já tem dados, precisamos do update
+
+                String objId = objects.get(0).getObjectId();
+                ParseQuery<ParseObject> query1 = ParseQuery.getQuery("myconsumeddiet");
+                query1.getInBackground(objId, new GetCallback<ParseObject>() {
+                    public void done(ParseObject objClass, ParseException e) {
+                        System.out.println(e);
+                        if (e == null) {
+
+                            int consumedCalories = objects.get(0).getInt(weekday.toLowerCase());
+
+                            // Now let's update it with some new data. In this case, only cheatMode and score
+                            // will get sent to the Parse Cloud. playerName hasn't changed.
+                            String et_calories_str = et_calories.getText().toString();
+                            objClass.put(weekday.toLowerCase(), Integer.parseInt(et_calories_str) + consumedCalories);
+
+                            objClass.saveInBackground(); //TODO FICAR ESPERTO COM O BACKGROUND
+
+                        }
+                    }
+                });
+
+
+            } else { //senao adiciona os dados novos
+
+                ParseObject objClass = new ParseObject("myconsumeddiet");
+                objClass.put("userID", ParseObject.createWithoutData(ParseUser.class, userId) );
+
+                if(!weekday.toLowerCase().equals("sunday")) {
+                    objClass.put("sunday", 0);
+                }
+                if(!weekday.toLowerCase().equals("monday")) {
+                    objClass.put("monday", 0);
+                }
+                if(!weekday.toLowerCase().equals("tuesday")) {
+                    objClass.put("tuesday", 0);
+                }
+                if(!weekday.toLowerCase().equals("wednesday")) {
+                    objClass.put("wednesday", 0);
+                }
+                if(!weekday.toLowerCase().equals("thursday")) {
+                    objClass.put("thursday", 0);
+                }
+                if(!weekday.toLowerCase().equals("friday")) {
+                    objClass.put("friday", 0);
+                }
+                if(!weekday.toLowerCase().equals("saturday")) {
+                    objClass.put("saturday", 0);
+                }
+
+                String et_calories_str = et_calories.getText().toString();
+                objClass.put(weekday.toLowerCase(), Integer.parseInt(et_calories_str));
+
+                objClass.saveInBackground(); //TODO FICAR ESPERTO COM O BACKGROUND
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
 
         Snackbar.make(view, "Saved!", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
 
-        finish();
+//        finish();
 
     }
 
