@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+    <head>
+        <meta charset="UTF-8">
+        <title>iHealthy</title>
+
+
+        <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'>
+        <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+
+        <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
+
+
+
+
+    </head>
+
+    <body>
+        <div class="cotn_principal">
+            <div class="cont_centrar">
+                <h1 ><font color="green">iHealthy</font></h1>
+                <div class="cont_login">
+                    <div class="cont_info_log_sign_up">
+                        <div class="col_md_login">
+                            <div class="cont_ba_opcitiy">
+
+                                <h2>Login</h2>  
+                                <p>Entre e gerencie seu restaurante!</p>
+                                <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                            </div>
+                        </div>
+                        <div class="col_md_sign_up">
+                            <div class="cont_ba_opcitiy">
+                                <h2>Sign Up</h2>
+
+
+                                <p>Crie sua conta e começe a ganhar agora mesmo!</p>
+
+                                <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="cont_back_info">
+                        <div class="cont_img_back_grey">
+                            <img src="https://www.activeapril.vic.gov.au/wp/wp-content/uploads/2016/04/bigstock-Healthy-Eating-20502122_1024wide-1024x500.jpg" alt="" />
+                        </div>
+
+                    </div>
+                    <div class="cont_forms" >
+                        <div class="cont_img_back_">
+                            <img src="https://www.activeapril.vic.gov.au/wp/wp-content/uploads/2016/04/bigstock-Healthy-Eating-20502122_1024wide-1024x500.jpg" alt="" />
+                        </div>
+                        <div class="cont_form_login">
+                            <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+                            <h2>Login</h2>
+                            <input id="login_username" type="text" placeholder="Username" />
+                            <input id="login_password" type="password" placeholder="Password" />
+                            <button class="btn_login" onclick="login()">LOGIN</button>
+                        </div>
+
+                        <div class="cont_form_sign_up">
+                            <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                            <h2>Sign Up</h2>
+                            <input id="signup_username" type="text" placeholder="Username" />
+                            <input id="signup_email" type="text" placeholder="Email" />
+                            <input id="signup_password" type="password" placeholder="Password" />
+                            <input id="signup_confirm_password" type="password" placeholder="Confirm Password" />
+                            <button class="btn_sign_up" onclick="sign_up()">SIGN UP</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <script  src="js/index.js"></script>
+        <script  src="js/parse.js"></script>
+
+
+    </body>
+
+</html>

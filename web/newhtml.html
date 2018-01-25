@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
+
+        <title>TODO supply a title</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <button class="logout" onclick="logout()">LOGOUT</button>
+
+        <script>
+            Parse.initialize("TQhl7DbLKccsTnRgMR6rtlCSWgo7KTdfGfGDlx32", "q6yDi6SBuC3LhL8ohXrCLFEFvdOdZY6kK8sMX3KL");
+            Parse.serverURL = "https://parseapi.back4app.com/";
+            
+            function logout() {
+                Parse.User.logOut().then(() => {
+                    window.location = "index.html";
+                });
+            }
+        </script>
+    </body>
+</html>
