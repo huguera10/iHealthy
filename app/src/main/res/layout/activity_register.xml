@@ -19,7 +19,9 @@
             android:hint="Username"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="7dp" />
+            tools:layout_editor_absoluteY="7dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
 
         <EditText
             android:id="@+id/register_password"
@@ -29,7 +31,9 @@
             android:hint="Password"
             android:inputType="textPassword"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="125dp" />
+            tools:layout_editor_absoluteY="125dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
 
         <EditText
             android:id="@+id/register_password_again"
@@ -39,7 +43,9 @@
             android:hint="Password Again"
             android:inputType="textPassword"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="125dp" />
+            tools:layout_editor_absoluteY="125dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
 
         <EditText
             android:id="@+id/register_email"
@@ -49,13 +55,22 @@
             android:hint="Email"
             android:inputType="textEmailAddress"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="65dp" />
+            tools:layout_editor_absoluteY="65dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
 
         <Button
             android:id="@+id/register"
+            style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register" />
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Register"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

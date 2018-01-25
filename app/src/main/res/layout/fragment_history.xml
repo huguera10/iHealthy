@@ -1,362 +1,423 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ihealthy.ihealthy.HistoryFragment">
+    android:orientation="vertical"
+    tools:context="com.ihealthy.ihealthy.HistoryFragment" >
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView" >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:maxLength="99"
-                android:singleLine="true"
-                android:text="My Week History"
-                android:textAlignment="center"
-                android:textSize="30sp" />
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="My Week History"
+        style="?android:textAppearanceLarge"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Sunday"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_sunday"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/tv_2"
-                android:layout_alignLeft="@+id/et_tuesday"
-                android:layout_alignStart="@+id/et_tuesday"
-                android:layout_toLeftOf="@+id/textView16"
-                android:layout_toStartOf="@+id/textView16"
+                android:layout_weight="0.5"
                 android:hint="1500"
-                android:inputType="number"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_expected_sunday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/textView16"
-                android:layout_alignBottom="@+id/textView16"
-                android:layout_toEndOf="@+id/textView16"
-                android:layout_toRightOf="@+id/textView16"
-                android:hint="1500"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tv_title"
-                android:layout_marginTop="14dp"
-                android:text="Sunday:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/tv_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tv_2"
-                android:text="Monday:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/tv_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tv_3"
-                android:text="Tuesday:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/et_tuesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/et_monday"
-                android:layout_alignLeft="@+id/et_monday"
-                android:layout_alignRight="@+id/et_monday"
-                android:layout_alignStart="@+id/et_monday"
-                android:layout_below="@+id/et_monday"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
                 android:ems="10"
-                android:hint="1555"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/et_expected_tuesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/et_wednesday"
-                android:layout_alignEnd="@+id/et_expected_monday"
-                android:layout_alignRight="@+id/et_expected_monday"
-                android:layout_toEndOf="@+id/textView10"
-                android:layout_toRightOf="@+id/textView10"
-                android:ems="10"
-                android:hint="1555"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignTop="@+id/et_wednesday"
-                android:text="Wednesday:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/et_monday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_3"
-                android:layout_alignBottom="@+id/tv_3"
-                android:layout_alignLeft="@+id/et_wednesday"
-                android:layout_alignStart="@+id/et_wednesday"
-                android:hint="2000"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/et_expected_monday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textView15"
-                android:layout_toEndOf="@+id/textView10"
-                android:layout_toRightOf="@+id/textView10"
-                android:hint="2000"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/et_wednesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView15"
-                android:layout_toEndOf="@+id/tv_5"
-                android:layout_toRightOf="@+id/tv_5"
-                android:hint="1500"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/et_expected_wednesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/textView14"
-                android:layout_alignBottom="@+id/textView14"
-                android:layout_toEndOf="@+id/textView14"
-                android:layout_toRightOf="@+id/textView14"
-                android:hint="1500"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tv_5"
-                android:text="Thursday:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/et_thursday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_6"
-                android:layout_alignBottom="@+id/tv_6"
-                android:layout_toEndOf="@+id/tv_5"
-                android:layout_toRightOf="@+id/tv_5"
-                android:hint="1200"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/et_expected_thursday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/textView13"
-                android:layout_alignBottom="@+id/textView13"
-                android:layout_toEndOf="@+id/textView13"
-                android:layout_toRightOf="@+id/textView13"
-                android:hint="1200"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tv_6"
-                android:text="Friday:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/et_friday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_7"
-                android:layout_alignBottom="@+id/tv_7"
-                android:layout_alignEnd="@+id/et_thursday"
-                android:layout_alignLeft="@+id/et_thursday"
-                android:layout_alignRight="@+id/et_thursday"
-                android:layout_alignStart="@+id/et_thursday"
-                android:hint="1200"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:id="@+id/et_expected_friday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/textView12"
-                android:layout_alignBottom="@+id/textView12"
-                android:layout_toEndOf="@+id/textView12"
-                android:layout_toRightOf="@+id/textView12"
-                android:hint="1200"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tv_7"
-                android:text="Saturday:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/et_saturday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_8"
-                android:layout_alignBottom="@+id/tv_8"
-                android:layout_alignEnd="@+id/et_friday"
-                android:layout_alignLeft="@+id/et_friday"
-                android:layout_alignRight="@+id/et_friday"
-                android:layout_alignStart="@+id/et_friday"
-                android:hint="1200"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:id="@+id/et_expected_saturday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/textView11"
-                android:layout_toRightOf="@+id/textView11"
-                android:hint="1200"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/et_monday"
-                android:layout_alignBottom="@+id/et_monday"
-                android:layout_toEndOf="@+id/et_tuesday"
-                android:layout_toRightOf="@+id/et_tuesday"
-                android:text=" Calories of "
-                android:textSize="18sp" />
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/textView11"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/et_saturday"
-                android:layout_alignBottom="@+id/et_saturday"
-                android:layout_toEndOf="@+id/et_saturday"
-                android:layout_toRightOf="@+id/et_saturday"
+                android:layout_weight="0.5"
                 android:text=" Calories of "
-                android:textSize="18sp" />
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                style="?android:textAppearanceSmall"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_expected_sunday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:hint="1500"
+                android:textAlignment="textStart"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monday"
+            android:textSize="24sp"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/et_monday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="2000"
+                android:singleLine="true"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
+                android:textColor="@color/colorAccent"
+                android:ems="10"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text=" Calories of "
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/et_expected_monday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="2000"
+                android:singleLine="true"
+                android:textAlignment="textStart"
+                android:ems="10"
+                android:layout_gravity="start"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tuesday"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="5dp"
+            android:textSize="24sp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/et_tuesday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="1555"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView112"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text=" Calories of "
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/et_expected_tuesday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="1555"
+                android:textAlignment="textStart"
+                android:layout_gravity="start"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wednesday"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="5dp"
+            android:textSize="24sp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/et_wednesday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="1500"
+                android:singleLine="true"
+                android:ems="10"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView212"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text=" Calories of "
+                android:textAlignment="center"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/et_expected_wednesday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="1500"
+                android:singleLine="true"
+                android:textAlignment="textStart"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thursday"
+            android:layout_marginTop="5dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/et_thursday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="textEnd"
+                android:ems="10"
+                android:layout_gravity="end"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/textView312"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text=" Calories of "
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/et_expected_thursday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="textStart"
+                android:ems="10"
+                android:layout_gravity="start"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Friday"
+            android:textSize="24sp"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/et_friday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="textEnd"
+                android:ems="10"
+                android:layout_gravity="end"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/textView412"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text=" Calories of "
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/et_expected_friday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="textStart"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="Saturday"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/et_saturday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="1200"
+                android:singleLine="true"
+                android:ems="10"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp"/>
 
             <TextView
                 android:id="@+id/textView12"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/tv_7"
-                android:layout_toEndOf="@+id/et_friday"
-                android:layout_toRightOf="@+id/et_friday"
                 android:text=" Calories of "
-                android:textSize="18sp" />
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
+                android:id="@+id/et_expected_saturday"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/et_thursday"
-                android:layout_alignBottom="@+id/et_thursday"
-                android:layout_toEndOf="@+id/et_thursday"
-                android:layout_toRightOf="@+id/et_thursday"
-                android:text=" Calories of "
-                android:textSize="18sp" />
+                android:hint="1200"
+                android:singleLine="true"
+                android:textAlignment="textStart"
+                android:ems="10"
+                android:layout_gravity="start"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="22sp" />
 
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_5"
-                android:layout_alignBottom="@+id/tv_5"
-                android:layout_toEndOf="@+id/et_wednesday"
-                android:layout_toRightOf="@+id/et_wednesday"
-                android:text=" Calories of "
-                android:textSize="18sp" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tv_4"
-                android:layout_toEndOf="@+id/et_monday"
-                android:layout_toRightOf="@+id/et_monday"
-                android:text=" Calories of "
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_sunday"
-                android:layout_alignBottom="@+id/tv_sunday"
-                android:layout_toEndOf="@+id/et_tuesday"
-                android:layout_toRightOf="@+id/et_tuesday"
-                android:text=" Calories of "
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
+        </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
+</LinearLayout>

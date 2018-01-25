@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:completionHint="Username"
-                    android:hint="@string/prompt_email"
+                    android:hint="Username"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -69,17 +69,28 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
                 android:layout_marginTop="16dp"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="@string/action_sign_in_short"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/register_button"
                 style="?android:textAppearanceSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="Register"
-                android:layout_gravity="center"/>
+                android:textStyle="bold"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="18sp"
+                android:textColor="@android:color/background_light" />
 
         </LinearLayout>
     </ScrollView>
