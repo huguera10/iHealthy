@@ -35,6 +35,7 @@ public class MyDietFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view =inflater.inflate(R.layout.fragment_my_diet, container, false);
+        getActivity().setTitle("My Diet");
 
         setSaveButton(view);
 
