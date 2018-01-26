@@ -11,14 +11,14 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 var currentUser = Parse.User.current();
 if (currentUser) {
     // do stuff with the user
-    window.location = "newhtml.html";
+    window.location = "table.html";
 }
 
 function login() {
     Parse.User.logIn(document.getElementById("login_username").value, document.getElementById("login_password").value, {
         success: function (user) {
             // Do stuff after successful login.
-            window.location = "newhtml.html";
+            window.location = "table.html";
         },
         error: function (user, error) {
             // The login failed. Check error to see why.
@@ -34,7 +34,7 @@ function sign_up() {
     user.set("email", document.getElementById("signup_email").value);
     user.signUp(null, {
         success: function (response) {
-            window.location = "newhtml.html";
+            window.location = "table.html";
         },
         error: function (response, error) {
             alert("Erro: " + error.message);
