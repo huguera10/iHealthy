@@ -34,7 +34,21 @@ function sign_up() {
     user.set("email", document.getElementById("signup_email").value);
     user.signUp(null, {
         success: function (response) {
-            window.location = "table.html";
+            var Restaurant = new Parse.Object.extend("Restaurant");
+            var object = new Restaurant();
+            object.set("owner", user);
+            object.set("name", "Novo Restaurante");
+            object.save(null, {
+                success: function (gameScore) {
+                    window.location = "table.html";
+                    
+                },
+                error: function (gameScore, error) {
+                    // Execute any logic that should take place if the save fails.
+                    // error is a Parse.Error with an error code and message.
+                    alert('Failed to create new object, with error code: ' + error.message);
+                }
+            });
         },
         error: function (response, error) {
             alert("Erro: " + error.message);
