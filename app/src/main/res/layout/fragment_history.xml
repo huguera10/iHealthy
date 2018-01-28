@@ -31,7 +31,7 @@
         android:id="@+id/tv_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+
         android:text="Sunday"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:text="Monday"
             android:textSize="24sp"
-            android:layout_marginTop="5dp"
+
             android:textAlignment="center"
 
             android:textColor="@color/colorPrimary"
@@ -146,7 +146,7 @@
             android:text="Tuesday"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
-            android:layout_marginTop="5dp"
+
             android:textSize="24sp"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -200,7 +200,7 @@
             android:text="Wednesday"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
-            android:layout_marginTop="5dp"
+
             android:textSize="24sp"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -254,7 +254,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Thursday"
-            android:layout_marginTop="5dp"
+
             android:textSize="24sp"
             android:textColor="@color/colorPrimary"
             android:textAlignment="center"
@@ -311,7 +311,7 @@
             android:layout_height="wrap_content"
             android:text="Friday"
             android:textSize="24sp"
-            android:layout_marginTop="5dp"
+
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -367,7 +367,7 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:text="Saturday"
-            android:layout_marginTop="5dp"
+            
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textAppearance="?android:attr/textAppearanceLarge" />

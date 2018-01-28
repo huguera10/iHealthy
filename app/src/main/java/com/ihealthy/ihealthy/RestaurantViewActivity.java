@@ -1,10 +1,13 @@
 package com.ihealthy.ihealthy;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -15,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -72,6 +76,7 @@ public class RestaurantViewActivity extends AppCompatActivity {
                 text1.setText(menuList.get(position).getName());
                 text2.setText("Calories: "+menuList.get(position).getCalories());
                 button.setText("R$"+menuList.get(position).getPrice());
+
                 return view;
             }
         };
@@ -81,7 +86,7 @@ public class RestaurantViewActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // TODO: CONFIRM PRODUCT ORDER ACTIVITY
+                Toast.makeText(getBaseContext(), "FOOOOOOI",Toast.LENGTH_LONG);
 
             }
         });
